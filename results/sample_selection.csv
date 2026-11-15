@@ -1,0 +1,176 @@
+galaxy,q,inclination,distance_mpc,rotation_refs,n,selection
+CamB,2,65.0,3.36,Bm03,9,fewer than 12 valid radii
+D512-2,2,56.0,15.2,Tr09,4,fewer than 12 valid radii
+D564-8,2,63.0,8.79,Tr09,6,fewer than 12 valid radii
+D631-7,1,59.0,7.72,"Tr09,dB01",16,included
+DDO064,1,60.0,6.8,"dB02,Sw02",14,included
+DDO154,2,64.0,4.04,"Be91,CB89",12,included
+DDO161,1,70.0,7.5,Co00,31,included
+DDO168,2,63.0,4.25,"Sa96,Br92",10,fewer than 12 valid radii
+DDO170,2,66.0,15.4,"Be91,La90",8,fewer than 12 valid radii
+ESO079-G014,1,79.0,28.7,Ge04,15,included
+ESO116-G012,1,74.0,13.0,Ge04,15,included
+ESO444-G084,2,32.0,4.83,Co00,7,fewer than 12 valid radii
+ESO563-G021,1,83.0,60.8,SG06,30,included
+F561-1,3,24.0,66.4,"dB97,dB96",6,quality=3
+F563-1,1,25.0,48.9,"KN08,dB96",17,inclination<30
+F563-V1,3,60.0,54.0,"dB97,dB96",6,quality=3
+F563-V2,1,29.0,59.7,"dB01,dB96",10,inclination<30
+F565-V2,2,60.0,51.8,"dB97,dB96",7,fewer than 12 valid radii
+F567-2,3,20.0,79.0,"dB97,dB96",5,quality=3
+F568-1,1,26.0,90.7,"dB01,dB96",12,inclination<30
+F568-3,1,40.0,82.4,"KN08,dB96",18,included
+F568-V1,1,40.0,80.6,"dB01,dB96",15,included
+F571-8,1,85.0,53.3,"dB01,dB96",13,included
+F571-V1,2,30.0,80.1,"dB97,dB96",7,fewer than 12 valid radii
+F574-1,1,65.0,96.8,"dB01,dB96",14,included
+F574-2,3,30.0,89.1,"dB97,dB96",5,quality=3
+F579-V1,1,26.0,89.5,"dB01,dB96",14,inclination<30
+F583-1,1,63.0,35.4,"KN08,dB96",25,included
+F583-4,1,55.0,53.3,"KN08,dB96",12,included
+IC2574,2,75.0,3.91,"Sa96,MC94",34,included
+IC4202,1,90.0,100.4,SG06,32,included
+KK98-251,2,59.0,6.8,BC04,15,included
+NGC0024,1,64.0,7.3,"Di08,Ch06",29,included
+NGC0055,2,77.0,2.11,"Sa96,Pu91",21,included
+NGC0100,1,89.0,13.5,"dB02,Rh96",21,included
+NGC0247,2,74.0,3.7,"Sa96,Ca90",26,included
+NGC0289,2,46.0,20.8,Wa97,28,included
+NGC0300,2,42.0,2.08,"Sa96,CP90",25,included
+NGC0801,1,80.0,80.7,"Sa96,Br92",13,included
+NGC0891,1,90.0,9.91,Fr11,18,included
+NGC1003,1,67.0,11.4,"Sa96,Br92",36,included
+NGC1090,1,64.0,37.0,Ge04,24,included
+NGC1705,3,80.0,5.73,Le14,14,quality=3
+NGC2366,3,68.0,3.27,Le14,26,quality=3
+NGC2403,1,63.0,3.16,"Da06,Fr02",73,included
+NGC2683,2,80.0,9.81,"Sa96,Br92",11,fewer than 12 valid radii
+NGC2841,1,76.0,14.1,"Di08,Be91",50,included
+NGC2903,1,66.0,6.6,"Be91,Be87",34,included
+NGC2915,2,56.0,4.06,El10,30,included
+NGC2955,1,56.0,97.9,SG06,24,included
+NGC2976,2,61.0,3.58,Si03,27,included
+NGC2998,1,58.0,68.1,"Sa96,Br92",13,included
+NGC3109,1,70.0,1.33,"Be91,JC90",25,included
+NGC3198,1,73.0,13.8,"Da06,Be91,Be87",43,included
+NGC3521,1,75.0,7.7,"Da06,Sa96",41,included
+NGC3726,2,53.0,18.0,"VS01,SV98",12,included
+NGC3741,1,70.0,3.21,"Ge07,Bm05",21,included
+NGC3769,2,70.0,18.0,"VS01,SV98",12,included
+NGC3877,2,76.0,18.0,"VS01,SV98",13,included
+NGC3893,1,49.0,18.0,"VS01,SV98",10,fewer than 12 valid radii
+NGC3917,1,79.0,18.0,"VS01,SV98",17,included
+NGC3949,2,55.0,18.0,"VS01,SV98",7,fewer than 12 valid radii
+NGC3953,1,62.0,18.0,"VS01,SV98",8,fewer than 12 valid radii
+NGC3972,1,77.0,18.0,"VS01,SV98",10,fewer than 12 valid radii
+NGC3992,1,56.0,23.7,"VS01,SV98",9,fewer than 12 valid radii
+NGC4010,2,89.0,18.0,"VS01,SV98",12,included
+NGC4013,2,89.0,18.0,"VS01,SV98",36,included
+NGC4051,2,49.0,18.0,"VS01,SV98",7,fewer than 12 valid radii
+NGC4068,2,44.0,4.37,Le14,6,fewer than 12 valid radii
+NGC4085,2,82.0,18.0,"VS01,SV98",7,fewer than 12 valid radii
+NGC4088,1,69.0,18.0,"VS01,SV98",12,included
+NGC4100,1,73.0,18.0,"VS01,SV98",24,included
+NGC4138,2,53.0,18.0,"VS01,SV98",7,fewer than 12 valid radii
+NGC4157,1,82.0,18.0,"VS01,SV98",17,included
+NGC4183,1,82.0,18.0,"VS01,SV98",23,included
+NGC4214,2,15.0,2.87,Le14,14,inclination<30
+NGC4217,1,86.0,18.0,"VS01,SV98",19,included
+NGC4389,3,50.0,18.0,"VS01,SV98",6,quality=3
+NGC4559,1,67.0,9.0,Ba05,32,included
+NGC5005,1,68.0,16.9,Ri15,18,included
+NGC5033,1,66.0,15.7,"Sa96,Be87",22,included
+NGC5055,1,55.0,9.9,"Ba06,Bl04",28,included
+NGC5371,1,53.0,39.7,"Sa96,Be87",19,included
+NGC5585,1,51.0,7.06,"Bl99,Sa96,Co91",24,included
+NGC5907,1,88.0,17.3,"Sa96,SA87",19,included
+NGC5985,1,60.0,39.7,"Bl04,Br92",33,included
+NGC6015,2,60.0,17.0,VM97,44,included
+NGC6195,1,62.0,127.8,SG06,23,included
+NGC6503,1,74.0,6.26,"Be91,Be87",31,included
+NGC6674,1,54.0,51.2,"Sa96,Br92",15,included
+NGC6789,2,43.0,3.52,Le14,4,fewer than 12 valid radii
+NGC6946,1,38.0,5.52,Bo08,58,included
+NGC7331,1,75.0,14.7,"Be91,Be87",36,included
+NGC7793,1,47.0,3.61,"Di08,Sa96,CP90",46,included
+NGC7814,1,90.0,14.4,Fr11,18,included
+PGC51017,3,66.0,13.6,Le14,6,quality=3
+UGC00128,1,57.0,64.5,"VB99,VH93",22,included
+UGC00191,1,45.0,17.1,"KN08,vZ97",9,fewer than 12 valid radii
+UGC00634,2,37.0,30.9,vZ97,4,fewer than 12 valid radii
+UGC00731,1,57.0,12.5,"Sw09,Sw02",12,included
+UGC00891,2,60.0,10.2,vZ97,5,fewer than 12 valid radii
+UGC01230,1,22.0,53.7,"dB02,VdH93",11,inclination<30
+UGC01281,1,90.0,5.27,"dB02,Sw02",25,included
+UGC02023,2,19.0,10.4,"Sw09,Sw02",5,inclination<30
+UGC02259,2,41.0,10.5,"Be91,Ca88",8,fewer than 12 valid radii
+UGC02455,3,51.0,6.92,"Sw09,Sw02",8,quality=3
+UGC02487,1,36.0,69.1,"No07,No05",17,included
+UGC02885,1,64.0,80.6,"Sa96,RA85",19,included
+UGC02916,2,50.0,65.4,"No07,No05",43,included
+UGC02953,2,50.0,16.5,"No07,No05",115,included
+UGC03205,1,67.0,50.0,"No07,No05",48,included
+UGC03546,1,55.0,28.7,"No07,No05",30,included
+UGC03580,2,63.0,20.7,"No07,No05",47,included
+UGC04278,1,90.0,9.51,"dB02,Sw02",25,included
+UGC04305,3,40.0,3.45,"Sw09,Sw02",22,quality=3
+UGC04325,1,41.0,9.6,"Sw09,Sw02",8,fewer than 12 valid radii
+UGC04483,2,58.0,3.34,"Le14,Le12",8,fewer than 12 valid radii
+UGC04499,1,50.0,12.5,"Sw09,Sw02",9,fewer than 12 valid radii
+UGC05005,1,41.0,53.7,"dB02,VH93",11,fewer than 12 valid radii
+UGC05253,2,37.0,22.9,"No07,No05",73,included
+UGC05414,1,55.0,9.4,"Sw09,Sw02",6,fewer than 12 valid radii
+UGC05716,2,54.0,21.3,vZ97,12,included
+UGC05721,1,61.0,6.18,"dB02,Sw02",23,included
+UGC05750,1,64.0,58.7,"dB01,VdH93",11,fewer than 12 valid radii
+UGC05764,2,60.0,7.47,vZ97,10,fewer than 12 valid radii
+UGC05829,2,34.0,8.64,"Sw09,Sw02",11,fewer than 12 valid radii
+UGC05918,2,46.0,7.66,"Sw09,Sw02",8,fewer than 12 valid radii
+UGC05986,2,90.0,8.63,"Sw09,Sw02",15,included
+UGC05999,2,22.0,47.7,"dB97,VH93",5,inclination<30
+UGC06399,1,75.0,18.0,"VS01,SV98",9,fewer than 12 valid radii
+UGC06446,1,51.0,12.0,"VS01,SV98",17,included
+UGC06614,1,36.0,88.7,"dB01,VH93",13,included
+UGC06628,2,20.0,15.1,"Sw09,Sw02",7,inclination<30
+UGC06667,1,89.0,18.0,"VS01,SV98",9,fewer than 12 valid radii
+UGC06786,1,64.0,29.3,"No07,No05",45,included
+UGC06787,2,66.0,21.3,"No07,No05",71,included
+UGC06818,2,75.0,18.0,"VS01,SV98",8,fewer than 12 valid radii
+UGC06917,1,56.0,18.0,"VS01,SV98",11,fewer than 12 valid radii
+UGC06923,2,65.0,18.0,"VS01,SV98",6,fewer than 12 valid radii
+UGC06930,1,32.0,18.0,"VS01,SV98",10,fewer than 12 valid radii
+UGC06973,3,71.0,18.0,"VS01,SV98",9,quality=3
+UGC06983,1,49.0,18.0,"VS01,SV98",17,included
+UGC07089,2,80.0,18.0,"VS01,SV98",12,included
+UGC07125,1,90.0,19.8,"Sw09,Sw02",13,included
+UGC07151,1,90.0,6.87,"Sw09,Sw02",11,fewer than 12 valid radii
+UGC07232,2,59.0,2.83,"Sw09,Sw02",4,fewer than 12 valid radii
+UGC07261,2,30.0,13.1,"Sw09,Sw02",7,fewer than 12 valid radii
+UGC07323,1,47.0,8.0,"Sw09,Sw02",10,fewer than 12 valid radii
+UGC07399,1,55.0,8.43,"Sw09,Sw02",10,fewer than 12 valid radii
+UGC07524,1,46.0,4.74,"Sw09,Sw02",31,included
+UGC07559,2,61.0,4.97,"Sw09,Sw02",7,fewer than 12 valid radii
+UGC07577,2,63.0,2.59,"Sw09,Sw02",9,fewer than 12 valid radii
+UGC07603,1,78.0,4.7,"Sw09,Sw02",12,included
+UGC07608,1,25.0,8.21,"Sw09,Sw02",8,inclination<30
+UGC07690,2,41.0,8.11,"Sw09,Sw02",7,fewer than 12 valid radii
+UGC07866,2,44.0,4.57,"Sw09,Sw02",7,fewer than 12 valid radii
+UGC08286,1,90.0,6.5,"Sw09,Sw02",17,included
+UGC08490,1,50.0,4.65,"Sw09,Sw02",30,included
+UGC08550,1,90.0,6.7,"Sw09,Sw02",11,fewer than 12 valid radii
+UGC08699,2,73.0,39.3,"No07,No05",41,included
+UGC08837,2,80.0,7.21,"Sw09,Sw02",8,fewer than 12 valid radii
+UGC09037,2,65.0,83.6,Ha14,22,included
+UGC09133,1,53.0,57.1,"No07,No05",68,included
+UGC09992,2,30.0,10.7,"Sw09,Sw02",5,fewer than 12 valid radii
+UGC10310,1,34.0,15.2,"Sw09,Sw02",7,fewer than 12 valid radii
+UGC11455,1,90.0,78.6,SG06,36,included
+UGC11557,2,30.0,24.2,"Sw02,dB01",12,included
+UGC11820,1,45.0,18.1,"KN08,vZ97",10,fewer than 12 valid radii
+UGC11914,1,31.0,16.9,"No07,No05",65,included
+UGC12506,2,86.0,100.6,Ha14,31,included
+UGC12632,1,46.0,9.77,"Sw09,Sw02",15,included
+UGC12732,1,39.0,13.2,"Sw09,Sw02",16,included
+UGCA281,3,67.0,5.68,Le14,7,quality=3
+UGCA442,1,64.0,4.35,Co00,8,fewer than 12 valid radii
+UGCA444,2,78.0,0.98,Ke07,36,included

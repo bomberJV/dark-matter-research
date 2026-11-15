@@ -1,0 +1,114 @@
+{
+  "date": "2026-11-13",
+  "seed": 20261113,
+  "sample_n": 100,
+  "radial_points": 2742,
+  "parent_n": 175,
+  "selection": "Q\u22642; inclination\u226530 degrees; at least 12 positive, finite radius/speed/error rows",
+  "baseline_disc_ml": 0.5,
+  "baseline_bulge_ml": 0.7,
+  "error_floor_kms": 5,
+  "nfw_lower_chi2": 37,
+  "burkert_lower_chi2": 63,
+  "within_2": 13,
+  "median_delta": 2.740928168160102,
+  "preference_sign_changes_ml_03_to_07": 30,
+  "baseline_bound_any": 25,
+  "optimizer_failures": 0,
+  "ml_sensitivity": [
+    {
+      "ml": 0.3,
+      "burkert_lower_chi2": 47,
+      "nfw_lower_chi2": 53,
+      "within_2": 17,
+      "median_delta": -1.2221903269783152
+    },
+    {
+      "ml": 0.5,
+      "burkert_lower_chi2": 63,
+      "nfw_lower_chi2": 37,
+      "within_2": 13,
+      "median_delta": 2.740928168160102
+    },
+    {
+      "ml": 0.7,
+      "burkert_lower_chi2": 77,
+      "nfw_lower_chi2": 23,
+      "within_2": 15,
+      "median_delta": 6.881574917422345
+    }
+  ],
+  "synthetic_recovery": [
+    {
+      "truth": "NFW",
+      "minimum_radius_kpc": 0.3,
+      "trials": 100,
+      "correct": 98,
+      "fraction": 0.98,
+      "wilson_low": 0.9299868370580063,
+      "wilson_high": 0.9944981477650318,
+      "strong_correct": 52
+    },
+    {
+      "truth": "NFW",
+      "minimum_radius_kpc": 3.0,
+      "trials": 100,
+      "correct": 56,
+      "fraction": 0.56,
+      "wilson_low": 0.4622792771125631,
+      "wilson_high": 0.6532813459903167,
+      "strong_correct": 0
+    },
+    {
+      "truth": "NFW",
+      "minimum_radius_kpc": 8.0,
+      "trials": 100,
+      "correct": 44,
+      "fraction": 0.44,
+      "wilson_low": 0.34671865400968327,
+      "wilson_high": 0.537720722887437,
+      "strong_correct": 0
+    },
+    {
+      "truth": "Burkert",
+      "minimum_radius_kpc": 0.3,
+      "trials": 100,
+      "correct": 97,
+      "fraction": 0.97,
+      "wilson_low": 0.915479219195973,
+      "wilson_high": 0.9897456617765851,
+      "strong_correct": 58
+    },
+    {
+      "truth": "Burkert",
+      "minimum_radius_kpc": 3.0,
+      "trials": 100,
+      "correct": 65,
+      "fraction": 0.65,
+      "wilson_low": 0.5525426042919797,
+      "wilson_high": 0.7363589534652197,
+      "strong_correct": 0
+    },
+    {
+      "truth": "Burkert",
+      "minimum_radius_kpc": 8.0,
+      "trials": 100,
+      "correct": 51,
+      "fraction": 0.51,
+      "wilson_low": 0.4134784047743415,
+      "wilson_high": 0.6057816990761385,
+      "strong_correct": 0
+    }
+  ],
+  "validation": "Analytic mass integrals, noiseless parameter recovery and signed gas contribution passed.",
+  "versions": {
+    "python": "3.12.14",
+    "numpy": "2.3.5",
+    "scipy": "1.17.0",
+    "matplotlib": "3.10.8"
+  },
+  "files": {
+    "Rotmod_LTG.zip": "0a80cc90714828cc28b7dd57923576714d209f2490328c087c4a4ad607faf588",
+    "SPARC_Lelli2016c.mrt": "5aa0501f6b0d881fa579030e315e7b5b6ef561a5bd3a07472f9929c7e5728243"
+  }
+}
