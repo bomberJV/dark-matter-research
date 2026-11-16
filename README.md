@@ -1,5 +1,8 @@
 # Dark-matter research
 
+[Project priorities and agent handoff](https://github.com/bomberJV/brandon-studio/tree/priority-hub/priorities)
+
+
 - [Dark Matter, by Its Consequences](manuscript.md) compares halo profiles against SPARC rotation curves. The Python analysis, input data, figures and [paper PDF](web/dark-matter-2026.pdf) are included. [Reproduce the fits and figures](REPRODUCING.md).
 - [What predicts a galaxy's acceleration?](notes/sparc-pilot.md) reports the earlier multivariate pilot. The [original project note](notes/pilot-source.md) records its results. Its original analysis code is unavailable.
 - [Beyond rotation curves](notes/beyond-rotation-curves.md) sets out the related research proposal.
