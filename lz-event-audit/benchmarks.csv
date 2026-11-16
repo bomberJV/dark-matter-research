@@ -1,0 +1,25 @@
+id,arxiv,authors,m_chi_GeV,delta_keV,coupling,sigma_n_cm2,claim,paper_halo,note
+su-yang-yang,2609.01475,"Su, Yang, Yang",1105,350,A,1e-37,"best fit of two-bin likelihood (160-200 keV: 0, 225-271 keV: 1)","v0 220, vesc 544, vE 220, rho 0.3",sigma_n is the scan value at which the best fit is quoted
+fan-reece,2609.01504,"Fan, Reece",1100,350,QW,7.4e-39,"one event in 215-270 keV (SHM); 1 sigma range 300-380 keV","v0 220, vesc 540, rho 0.4, year-averaged",Vietze form factor in the paper; Helm raises delta by 5-10 keV (their statement)
+freese-theo-1000,2609.01583,"Freese, Theodosopoulos",1000,350,QW,1.86e-39,"inside LZ two-sided 90% interval","LZ assumptions (values not stated)",cross-section G_F^2 mu^2 / 8 pi; a factor 4 below Fan-Reece and Rodd et al.
+freese-theo-1100,2609.01583,"Freese, Theodosopoulos",1100,350,QW,1.86e-39,"thermal higgsino; slightly outside their estimated interval","LZ assumptions (values not stated)",same convention
+di-mauro,2609.02608,Di Mauro,1000,297.05,A,6.5e-43,"about 0.99 accepted events; relic cross-section","rho 0.3, v0 238, vesc 544, vE 250.2 +/- 14.9",pseudo-Dirac O1
+rodd-higgsino,2609.04175,"Rodd, Safdi, Slatyer, Xu",1100,377,QW,7.3e-39,"one ROI event; predicts 4.9 sideband events (critique paper)","rho 0.3, v0 238, vesc 544, year-averaged",reference point from the sideband critique
+dent-newstead-endo,2609.04673,"Dent, Newstead",1000,350,Z,,"0.6 sideband events per search-window event","rho 0.3, v0 238, vesc 544, vlab 250",taken from Ref. [13] of that paper
+dent-newstead-exo,2609.04673,"Dent, Newstead",42,-1000,Z,,"Fig. 3 exothermic point","rho 0.3, v0 238, vesc 544, vlab 250",their best-fit splitting at 42 GeV is not stated
+baer-barger-300,2609.06153,"Baer, Barger",300,-300,Z,1.5e-45,"one event in 5.4-269.9 keV","LZ: rho 0.3, v0 238, vesc 544, vE 254",unit excited fraction
+baer-barger-500a,2609.06153,"Baer, Barger",500,-275,Z,2.2e-45,"one event in 5.4-269.9 keV","LZ, vE 254",unit excited fraction
+baer-barger-500b,2609.06153,"Baer, Barger",500,-350,Z,3.8e-45,"one event in 5.4-269.9 keV","LZ, vE 254",unit excited fraction
+baer-barger-800,2609.06153,"Baer, Barger",800,-350,Z,6.7e-45,"one event in 5.4-269.9 keV","LZ, vE 254",unit excited fraction
+baer-barger-1000,2609.06153,"Baer, Barger",1000,-400,Z,1.3e-44,"one event in 5.4-269.9 keV","LZ, vE 254",unit excited fraction
+seesaw-B0045,2609.13038,"radiative seesaw (2609.13038)",744.04,361.327,QW,7.4e-39,N_WS = 1.039,"rho 0.3, v0 238, vesc 544, vlab 254",r_Omega = 1 rows only; cross-section G_F^2 mu^2 Q_W^2 / 2 pi
+seesaw-C0893,2609.13038,"radiative seesaw (2609.13038)",814.61,361.137,QW,7.4e-39,N_WS = 2.682,"vlab 254",r_Omega = 1
+seesaw-B0461,2609.13038,"radiative seesaw (2609.13038)",1192.44,373.809,QW,7.4e-39,N_WS = 1.130,"vlab 254",r_Omega = 1
+seesaw-B0581,2609.13038,"radiative seesaw (2609.13038)",1479.37,380.0,QW,7.4e-39,N_WS = 0.591,"vlab 254",r_Omega = 1
+fan-he-bestfit,2609.10491,"Fan, He, Wang, Zhao",550,323,A,,"best fit; authors call it a near-boundary, unphysical solution","v0 = vE 219, vesc 543",paper's sign convention is reversed (negative = endothermic); converted here
+delepine-khalil,2609.26698,"Delepine, Khalil",1000,339.2,A,,"balanced splitting (low and high sideband ratios equal)","v0 238, vE 232, vesc 544",model-independent benchmark
+halo-tail-2609.21444,2609.21444,2609.21444,1000,375,A,,"example parameter set able to explain the event","simulated Milky Way halos",paper itself notes sideband tension
+freeze-in-lepto,2609.13130,"Cabo-Almeida et al.",1000,350,A,,"upper edge of LZ 90% band, leptophobic","rho 0.3, v0 238, vesc 544, year-modulated",range 25-350 keV in paper
+freeze-in-univ,2609.13130,"Cabo-Almeida et al.",1000,290,A,,"upper edge of LZ 90% band, universal coupling","as above",range 25-290 keV in paper
+mahapatra-paul,2609.14799,"Mahapatra, Paul",1000,300,A,,"illustrative iDM point, O_ss","v0 220, vesc 540, vE 232",
+gce-simple,2609.26570,2609.26570,50,-1000,Z,,"global fit favours m ~ 50 GeV, delta ~ 1000 keV","not checked",sign inferred: endothermic scattering at 50 GeV cannot reach 1 MeV splitting; paper not read in full (fetch rate-limited)
