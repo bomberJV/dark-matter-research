@@ -1,0 +1,45 @@
+{
+  "framework": {
+    "halo": {
+      "rho": 0.3,
+      "v0": 238.0,
+      "vesc": 544.0,
+      "vE": 250.2,
+      "dvE": 14.9,
+      "phase": null,
+      "label": "SHM, year-averaged"
+    },
+    "detector": {
+      "exposure_tyr": 2.84,
+      "eff_knots_E": [
+        5.4,
+        14.0,
+        250.0,
+        269.9
+      ],
+      "eff_knots_v": [
+        0.5,
+        0.96,
+        0.96,
+        0.5
+      ],
+      "eff_floor_E": 4.0,
+      "eff_ceil_E": 285.0,
+      "res_a": 23.0,
+      "res_b": 0.093,
+      "sideband": [
+        350.0,
+        590.0
+      ],
+      "low_window": [
+        5.4,
+        55.0
+      ],
+      "event_E": 248.0,
+      "energy_scale": 1.0
+    }
+  },
+  "sigma_higgsino_2pi": 7.442628008174469e-39,
+  "sigma_higgsino_8pi": 1.8606570020436173e-39,
+  "n_benchmarks": 24
+}
