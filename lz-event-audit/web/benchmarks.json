@@ -1,0 +1,434 @@
+[
+ {
+  "id": "su-yang-yang",
+  "arxiv": "2609.01475",
+  "authors": "Su, Yang, Yang",
+  "m": 1105.0,
+  "delta": 350.0,
+  "coupling": "A",
+  "sigma_n": 1e-37,
+  "claim": "best fit of two-bin likelihood (160-200 keV: 0, 225-271 keV: 1)",
+  "paper_halo": "v0 220, vesc 544, vE 220, rho 0.3",
+  "note": "sigma_n is the scan value at which the best fit is quoted",
+  "python": {
+   "R_SB": 0.4766,
+   "dchi2": 2.426,
+   "timing_factor": 2.117,
+   "N_roi_own_sigma": 2956.0
+  }
+ },
+ {
+  "id": "fan-reece",
+  "arxiv": "2609.01504",
+  "authors": "Fan, Reece",
+  "m": 1100.0,
+  "delta": 350.0,
+  "coupling": "QW",
+  "sigma_n": 7.4e-39,
+  "claim": "one event in 215-270 keV (SHM); 1 sigma range 300-380 keV",
+  "paper_halo": "v0 220, vesc 540, rho 0.4, year-averaged",
+  "note": "Vietze form factor in the paper; Helm raises delta by 5-10 keV (their statement)",
+  "python": {
+   "R_SB": 0.4767,
+   "dchi2": 2.434,
+   "timing_factor": 2.118,
+   "N_roi_own_sigma": 67.09
+  }
+ },
+ {
+  "id": "freese-theo-1000",
+  "arxiv": "2609.01583",
+  "authors": "Freese, Theodosopoulos",
+  "m": 1000.0,
+  "delta": 350.0,
+  "coupling": "QW",
+  "sigma_n": 1.86e-39,
+  "claim": "inside LZ two-sided 90% interval",
+  "paper_halo": "LZ assumptions (values not stated)",
+  "note": "cross-section G_F^2 mu^2 / 8 pi; a factor 4 below Fan-Reece and Rodd et al.",
+  "python": {
+   "R_SB": 0.4801,
+   "dchi2": 2.372,
+   "timing_factor": 2.223,
+   "N_roi_own_sigma": 14.18
+  }
+ },
+ {
+  "id": "freese-theo-1100",
+  "arxiv": "2609.01583",
+  "authors": "Freese, Theodosopoulos",
+  "m": 1100.0,
+  "delta": 350.0,
+  "coupling": "QW",
+  "sigma_n": 1.86e-39,
+  "claim": "thermal higgsino; slightly outside their estimated interval",
+  "paper_halo": "LZ assumptions (values not stated)",
+  "note": "same convention",
+  "python": {
+   "R_SB": 0.4767,
+   "dchi2": 2.434,
+   "timing_factor": 2.118,
+   "N_roi_own_sigma": 16.86
+  }
+ },
+ {
+  "id": "di-mauro",
+  "arxiv": "2609.02608",
+  "authors": "Di Mauro",
+  "m": 1000.0,
+  "delta": 297.05,
+  "coupling": "A",
+  "sigma_n": 6.5e-43,
+  "claim": "about 0.99 accepted events; relic cross-section",
+  "paper_halo": "rho 0.3, v0 238, vesc 544, vE 250.2 +/- 14.9",
+  "note": "pseudo-Dirac O1",
+  "python": {
+   "R_SB": 0.07644,
+   "dchi2": 3.713,
+   "timing_factor": 1.372,
+   "N_roi_own_sigma": 0.9424
+  }
+ },
+ {
+  "id": "rodd-higgsino",
+  "arxiv": "2609.04175",
+  "authors": "Rodd, Safdi, Slatyer, Xu",
+  "m": 1100.0,
+  "delta": 377.0,
+  "coupling": "QW",
+  "sigma_n": 7.3e-39,
+  "claim": "one ROI event; predicts 4.9 sideband events (critique paper)",
+  "paper_halo": "rho 0.3, v0 238, vesc 544, year-averaged",
+  "note": "reference point from the sideband critique",
+  "python": {
+   "R_SB": 5.758,
+   "dchi2": 4.254,
+   "timing_factor": 3.828,
+   "N_roi_own_sigma": 0.6515
+  }
+ },
+ {
+  "id": "dent-newstead-endo",
+  "arxiv": "2609.04673",
+  "authors": "Dent, Newstead",
+  "m": 1000.0,
+  "delta": 350.0,
+  "coupling": "Z",
+  "sigma_n": null,
+  "claim": "0.6 sideband events per search-window event",
+  "paper_halo": "rho 0.3, v0 238, vesc 544, vlab 250",
+  "note": "taken from Ref. [13] of that paper",
+  "python": {
+   "R_SB": 0.4801,
+   "dchi2": 2.348,
+   "timing_factor": 2.233,
+   "N_roi_own_sigma": null
+  }
+ },
+ {
+  "id": "dent-newstead-exo",
+  "arxiv": "2609.04673",
+  "authors": "Dent, Newstead",
+  "m": 42.0,
+  "delta": -1000.0,
+  "coupling": "Z",
+  "sigma_n": null,
+  "claim": "Fig. 3 exothermic point",
+  "paper_halo": "rho 0.3, v0 238, vesc 544, vlab 250",
+  "note": "their best-fit splitting at 42 GeV is not stated",
+  "python": {
+   "R_SB": 0.03895,
+   "dchi2": 1.751,
+   "timing_factor": 0.9942,
+   "N_roi_own_sigma": null
+  }
+ },
+ {
+  "id": "baer-barger-300",
+  "arxiv": "2609.06153",
+  "authors": "Baer, Barger",
+  "m": 300.0,
+  "delta": -300.0,
+  "coupling": "Z",
+  "sigma_n": 1.5e-45,
+  "claim": "one event in 5.4-269.9 keV",
+  "paper_halo": "LZ: rho 0.3, v0 238, vesc 544, vE 254",
+  "note": "unit excited fraction",
+  "python": {
+   "R_SB": 0.03424,
+   "dchi2": 4.72,
+   "timing_factor": 0.9693,
+   "N_roi_own_sigma": 1.036
+  }
+ },
+ {
+  "id": "baer-barger-500a",
+  "arxiv": "2609.06153",
+  "authors": "Baer, Barger",
+  "m": 500.0,
+  "delta": -275.0,
+  "coupling": "Z",
+  "sigma_n": 2.2e-45,
+  "claim": "one event in 5.4-269.9 keV",
+  "paper_halo": "LZ, vE 254",
+  "note": "unit excited fraction",
+  "python": {
+   "R_SB": 0.03705,
+   "dchi2": 4.895,
+   "timing_factor": 0.9692,
+   "N_roi_own_sigma": 0.9911
+  }
+ },
+ {
+  "id": "baer-barger-500b",
+  "arxiv": "2609.06153",
+  "authors": "Baer, Barger",
+  "m": 500.0,
+  "delta": -350.0,
+  "coupling": "Z",
+  "sigma_n": 3.8e-45,
+  "claim": "one event in 5.4-269.9 keV",
+  "paper_halo": "LZ, vE 254",
+  "note": "unit excited fraction",
+  "python": {
+   "R_SB": 0.0795,
+   "dchi2": 4.084,
+   "timing_factor": 0.9774,
+   "N_roi_own_sigma": 0.9965
+  }
+ },
+ {
+  "id": "baer-barger-800",
+  "arxiv": "2609.06153",
+  "authors": "Baer, Barger",
+  "m": 800.0,
+  "delta": -350.0,
+  "coupling": "Z",
+  "sigma_n": 6.7e-45,
+  "claim": "one event in 5.4-269.9 keV",
+  "paper_halo": "LZ, vE 254",
+  "note": "unit excited fraction",
+  "python": {
+   "R_SB": 0.09432,
+   "dchi2": 4.023,
+   "timing_factor": 0.9816,
+   "N_roi_own_sigma": 0.997
+  }
+ },
+ {
+  "id": "baer-barger-1000",
+  "arxiv": "2609.06153",
+  "authors": "Baer, Barger",
+  "m": 1000.0,
+  "delta": -400.0,
+  "coupling": "Z",
+  "sigma_n": 1.3e-44,
+  "claim": "one event in 5.4-269.9 keV",
+  "paper_halo": "LZ, vE 254",
+  "note": "unit excited fraction",
+  "python": {
+   "R_SB": 0.1592,
+   "dchi2": 3.682,
+   "timing_factor": 0.998,
+   "N_roi_own_sigma": 0.9884
+  }
+ },
+ {
+  "id": "seesaw-B0045",
+  "arxiv": "2609.13038",
+  "authors": "radiative seesaw (2609.13038)",
+  "m": 744.04,
+  "delta": 361.327,
+  "coupling": "QW",
+  "sigma_n": 7.4e-39,
+  "claim": "N_WS = 1.039",
+  "paper_halo": "rho 0.3, v0 238, vesc 544, vlab 254",
+  "note": "r_Omega = 1 rows only; cross-section G_F^2 mu^2 Q_W^2 / 2 pi",
+  "python": {
+   "R_SB": 1.329,
+   "dchi2": 2.404,
+   "timing_factor": 3.624,
+   "N_roi_own_sigma": 2.419
+  }
+ },
+ {
+  "id": "seesaw-C0893",
+  "arxiv": "2609.13038",
+  "authors": "radiative seesaw (2609.13038)",
+  "m": 814.61,
+  "delta": 361.137,
+  "coupling": "QW",
+  "sigma_n": 7.4e-39,
+  "claim": "N_WS = 2.682",
+  "paper_halo": "vlab 254",
+  "note": "r_Omega = 1",
+  "python": {
+   "R_SB": 1.209,
+   "dchi2": 2.408,
+   "timing_factor": 3.316,
+   "N_roi_own_sigma": 4.643
+  }
+ },
+ {
+  "id": "seesaw-B0461",
+  "arxiv": "2609.13038",
+  "authors": "radiative seesaw (2609.13038)",
+  "m": 1192.44,
+  "delta": 373.809,
+  "coupling": "QW",
+  "sigma_n": 7.4e-39,
+  "claim": "N_WS = 1.130",
+  "paper_halo": "vlab 254",
+  "note": "r_Omega = 1",
+  "python": {
+   "R_SB": 3.319,
+   "dchi2": 3.52,
+   "timing_factor": 3.395,
+   "N_roi_own_sigma": 2.026
+  }
+ },
+ {
+  "id": "seesaw-B0581",
+  "arxiv": "2609.13038",
+  "authors": "radiative seesaw (2609.13038)",
+  "m": 1479.37,
+  "delta": 380.0,
+  "coupling": "QW",
+  "sigma_n": 7.4e-39,
+  "claim": "N_WS = 0.591",
+  "paper_halo": "vlab 254",
+  "note": "r_Omega = 1",
+  "python": {
+   "R_SB": 5.505,
+   "dchi2": 4.233,
+   "timing_factor": 3.489,
+   "N_roi_own_sigma": 1.135
+  }
+ },
+ {
+  "id": "fan-he-bestfit",
+  "arxiv": "2609.10491",
+  "authors": "Fan, He, Wang, Zhao",
+  "m": 550.0,
+  "delta": 323.0,
+  "coupling": "A",
+  "sigma_n": null,
+  "claim": "best fit; authors call it a near-boundary, unphysical solution",
+  "paper_halo": "v0 = vE 219, vesc 543",
+  "note": "paper's sign convention is reversed (negative = endothermic); converted here",
+  "python": {
+   "R_SB": 0.0869,
+   "dchi2": 2.588,
+   "timing_factor": 2.044,
+   "N_roi_own_sigma": null
+  }
+ },
+ {
+  "id": "delepine-khalil",
+  "arxiv": "2609.26698",
+  "authors": "Delepine, Khalil",
+  "m": 1000.0,
+  "delta": 339.2,
+  "coupling": "A",
+  "sigma_n": null,
+  "claim": "balanced splitting (low and high sideband ratios equal)",
+  "paper_halo": "v0 238, vE 232, vesc 544",
+  "note": "model-independent benchmark",
+  "python": {
+   "R_SB": 0.2694,
+   "dchi2": 2.579,
+   "timing_factor": 1.855,
+   "N_roi_own_sigma": null
+  }
+ },
+ {
+  "id": "halo-tail-2609.21444",
+  "arxiv": "2609.21444",
+  "authors": "2609.21444",
+  "m": 1000.0,
+  "delta": 375.0,
+  "coupling": "A",
+  "sigma_n": null,
+  "claim": "example parameter set able to explain the event",
+  "paper_halo": "simulated Milky Way halos",
+  "note": "paper itself notes sideband tension",
+  "python": {
+   "R_SB": 5.175,
+   "dchi2": 4.074,
+   "timing_factor": 3.91,
+   "N_roi_own_sigma": null
+  }
+ },
+ {
+  "id": "freeze-in-lepto",
+  "arxiv": "2609.13130",
+  "authors": "Cabo-Almeida et al.",
+  "m": 1000.0,
+  "delta": 350.0,
+  "coupling": "A",
+  "sigma_n": null,
+  "claim": "upper edge of LZ 90% band, leptophobic",
+  "paper_halo": "rho 0.3, v0 238, vesc 544, year-modulated",
+  "note": "range 25-350 keV in paper",
+  "python": {
+   "R_SB": 0.4801,
+   "dchi2": 2.361,
+   "timing_factor": 2.227,
+   "N_roi_own_sigma": null
+  }
+ },
+ {
+  "id": "freeze-in-univ",
+  "arxiv": "2609.13130",
+  "authors": "Cabo-Almeida et al.",
+  "m": 1000.0,
+  "delta": 290.0,
+  "coupling": "A",
+  "sigma_n": null,
+  "claim": "upper edge of LZ 90% band, universal coupling",
+  "paper_halo": "as above",
+  "note": "range 25-290 keV in paper",
+  "python": {
+   "R_SB": 0.06769,
+   "dchi2": 3.845,
+   "timing_factor": 1.341,
+   "N_roi_own_sigma": null
+  }
+ },
+ {
+  "id": "mahapatra-paul",
+  "arxiv": "2609.14799",
+  "authors": "Mahapatra, Paul",
+  "m": 1000.0,
+  "delta": 300.0,
+  "coupling": "A",
+  "sigma_n": null,
+  "claim": "illustrative iDM point, O_ss",
+  "paper_halo": "v0 220, vesc 540, vE 232",
+  "note": "",
+  "python": {
+   "R_SB": 0.08084,
+   "dchi2": 3.653,
+   "timing_factor": 1.387,
+   "N_roi_own_sigma": null
+  }
+ },
+ {
+  "id": "gce-simple",
+  "arxiv": "2609.26570",
+  "authors": "2609.26570",
+  "m": 50.0,
+  "delta": -1000.0,
+  "coupling": "Z",
+  "sigma_n": null,
+  "claim": "global fit favours m ~ 50 GeV, delta ~ 1000 keV",
+  "paper_halo": "not checked",
+  "note": "sign inferred: endothermic scattering at 50 GeV cannot reach 1 MeV splitting; paper not read in full (fetch rate-limited)",
+  "python": {
+   "R_SB": 0.3071,
+   "dchi2": 1.704,
+   "timing_factor": 1.025,
+   "N_roi_own_sigma": null
+  }
+ }
+]
