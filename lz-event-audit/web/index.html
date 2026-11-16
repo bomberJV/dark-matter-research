@@ -1,0 +1,191 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#101914">
+<title>One Event, Many Explanations — the LZ 248 keV explorer</title>
+<meta name="description" content="An interactive explorer for the LUX-ZEPLIN 248 keV nuclear-recoil candidate: load any of 24 published dark-matter explanations, change the halo and detector assumptions, and watch the recoil spectrum, sideband expectation and fit quality respond.">
+<meta property="og:title" content="One Event, Many Explanations — the LZ 248 keV explorer">
+<meta property="og:description" content="24 published explanations of one dark-matter candidate event, under one set of assumptions you can change.">
+<link rel="stylesheet" href="explorer.css">
+<script type="module" src="app.js"></script>
+</head>
+<body>
+<a class="skip" href="#explorer">Skip to the explorer</a>
+<header class="top">
+  <a class="brand" href="https://brandonfhuang.com/curiosities/">B. <span>THE OPEN NOTEBOOK</span></a>
+  <a href="https://brandonfhuang.com/curiosities/#papers">All papers ↗</a>
+</header>
+<main>
+<section class="hero">
+  <p class="eyebrow">RESEARCH NOTE 04 / NOVEMBER 15, 2026 · INTERACTIVE</p>
+  <h1>One event,<br><em>many explanations.</em></h1>
+  <p class="dek">In 2.84 tonne-years, the LUX-ZEPLIN detector recorded one nuclear recoil at 248 keV that its known backgrounds explain poorly. About fifty papers followed. This explorer puts their explanations under one set of assumptions and lets you change them.</p>
+  <p class="byline">Prepared for Brandon Frank Han-Chween Huang<br>AI-assisted computation · Working note, not peer-reviewed · All numbers computed in your browser</p>
+  <div class="hero-bottom">
+    <div class="stats">
+      <span><strong>24</strong>PUBLISHED BENCHMARKS</span>
+      <span><strong>14</strong>PAPERS</span>
+      <span><strong>7</strong>INDEPENDENT CHECKS PASSED</span>
+    </div>
+    <div class="downloads">
+      <a href="../README.md">Full write-up ↗</a>
+      <a href="https://github.com/bomberJV/dark-matter-research/tree/research/lz-event-audit/lz-event-audit">Code and results ↗</a>
+      <a href="../../web/index.html">Previous note: Dark Matter, by Its Consequences ↗</a>
+    </div>
+  </div>
+</section>
+
+<section class="explorer" id="explorer" aria-labelledby="explorer-title">
+  <div class="section-head">
+    <p class="eyebrow">THE EXPLORER</p>
+    <h2 id="explorer-title">Load an explanation, then push on its assumptions.</h2>
+    <p class="lede">The coloured area is what LZ would have selected; the dotted line is every recoil, including those above its window. The red band is a high-energy sideband where LZ saw nothing. A good explanation puts its weight at 248 keV and little in the sideband.</p>
+  </div>
+
+  <div class="explorer-grid">
+    <form class="controls" id="controls" aria-label="Model and assumptions">
+      <fieldset>
+        <legend>Explanation</legend>
+        <label for="bench">Published benchmark</label>
+        <select id="bench"></select>
+        <p class="claim" id="claim" aria-live="polite"></p>
+      </fieldset>
+
+      <fieldset>
+        <legend>Particle</legend>
+        <div class="row">
+          <label for="mass">Mass</label>
+          <output id="mass-out" for="mass"></output>
+        </div>
+        <input type="range" id="mass" min="1" max="3.5" step="0.005" aria-describedby="mass-hint">
+        <p class="hint" id="mass-hint">10 GeV to 3 TeV, logarithmic</p>
+
+        <div class="row">
+          <label for="delta">Splitting δ</label>
+          <output id="delta-out" for="delta"></output>
+        </div>
+        <input type="range" id="delta" min="-3000" max="600" step="0.5" aria-describedby="delta-hint">
+        <p class="hint" id="delta-hint">Positive: the particle is kicked up to a heavier state (endothermic). Negative: it drops to a lighter one and releases energy (exothermic). Zero: ordinary elastic scattering.</p>
+
+        <label for="coupling">Coupling to the nucleus</label>
+        <select id="coupling">
+          <option value="A">Equal to protons and neutrons (A²)</option>
+          <option value="Z">To electric charge, as a dark photon (Z²)</option>
+          <option value="QW">Through the Z boson, as a higgsino (weak charge²)</option>
+        </select>
+      </fieldset>
+
+      <fieldset>
+        <legend>Normalisation</legend>
+        <div class="seg" role="radiogroup" aria-label="Normalisation">
+          <label><input type="radio" name="norm" value="one" checked> Scale to one event</label>
+          <label><input type="radio" name="norm" value="sigma"> Fix the cross-section</label>
+        </div>
+        <div id="sigma-wrap" hidden>
+          <div class="row">
+            <label for="sigma">Cross-section per nucleon</label>
+            <output id="sigma-out" for="sigma"></output>
+          </div>
+          <input type="range" id="sigma" min="-47" max="-36" step="0.01">
+        </div>
+      </fieldset>
+
+      <fieldset>
+        <legend>Dark-matter halo</legend>
+        <div class="preset">
+          <button type="button" data-halo="common">Common (year-averaged)</button>
+          <button type="button" data-halo="lz">LZ fixed Earth speed</button>
+          <button type="button" data-halo="paper" id="paper-halo" disabled>This paper's halo</button>
+        </div>
+        <p class="hint" id="paper-halo-note"></p>
+        <div class="row"><label for="rho">Local density</label><output id="rho-out" for="rho"></output></div>
+        <input type="range" id="rho" min="0.2" max="0.6" step="0.01">
+        <div class="row"><label for="vesc">Escape speed</label><output id="vesc-out" for="vesc"></output></div>
+        <input type="range" id="vesc" min="480" max="650" step="1">
+        <div class="row"><label for="v0">Typical speed v₀</label><output id="v0-out" for="v0"></output></div>
+        <input type="range" id="v0" min="200" max="270" step="1">
+        <div class="row"><label for="vE">Earth's mean speed</label><output id="vE-out" for="vE"></output></div>
+        <input type="range" id="vE" min="215" max="270" step="0.1">
+        <label for="time">Time of year</label>
+        <select id="time">
+          <option value="avg">Averaged over the year</option>
+          <option value="fixed">No orbital motion (fixed speed)</option>
+          <option value="event">June 16 (the event's date)</option>
+          <option value="dec">December 2 (slowest)</option>
+        </select>
+      </fieldset>
+
+      <fieldset>
+        <legend>Detector</legend>
+        <label for="escale">Energy scale</label>
+        <select id="escale">
+          <option value="0.91491">−9.3% (calibration systematic)</option>
+          <option value="1" selected>Nominal</option>
+          <option value="1.093">+9.3%</option>
+        </select>
+        <label for="sb">Sideband upper edge</label>
+        <select id="sb">
+          <option value="590" selected>590 keV (Rodd et al.)</option>
+          <option value="680">680 keV (Dent &amp; Newstead)</option>
+        </select>
+        <label class="check"><input type="checkbox" id="logy"> Logarithmic vertical axis</label>
+      </fieldset>
+    </form>
+
+    <div class="stage">
+      <figure class="plot">
+        <canvas id="spectrum" role="img" aria-label="Recoil spectrum" tabindex="0"></canvas>
+        <figcaption id="spectrum-caption"><span class="legend"><span class="sw sw-sel"></span>selected by LZ</span><span class="legend"><span class="sw sw-all"></span>all recoils</span><span class="legend"><span class="sw sw-sb"></span>sideband, nothing seen</span><br>Vertical line: the event at 248 keV, with its ±23 keV statistical uncertainty shaded.</figcaption>
+      </figure>
+
+      <div class="readouts" aria-live="polite">
+        <div class="metric"><span class="k" id="k-count">Cross-section for one event</span><strong id="r-count">–</strong></div>
+        <div class="metric"><span class="k">Sideband events per signal event</span><strong id="r-sb">–</strong><span class="sub" id="r-sb-p"></span></div>
+        <div class="metric"><span class="k">Fit penalty Δχ²</span><strong id="r-chi">–</strong><span class="sub" id="r-chi-sub"></span></div>
+        <div class="metric"><span class="k">Rate on June 16 vs. year average</span><strong id="r-time">–</strong><span class="sub" id="r-time-sub"></span></div>
+        <div class="metric"><span class="k">Spectrum peak (selected)</span><strong id="r-peak">–</strong><span class="sub" id="r-low"></span></div>
+        <div class="metric"><span class="k">Audit value (Python)</span><strong id="r-audit">–</strong><span class="sub" id="r-audit-sub"></span></div>
+      </div>
+      <p class="verdict" id="verdict" aria-live="polite"></p>
+    </div>
+  </div>
+</section>
+
+<section class="map-section" aria-labelledby="map-title">
+  <div class="section-head">
+    <p class="eyebrow">THE WHOLE LANDSCAPE</p>
+    <h2 id="map-title">Every mass and splitting at once.</h2>
+    <p class="lede">Colour is the fit penalty for one event at 248 keV with an empty sideband, on the common halo. Dots are the published benchmarks; the ring is your current choice. Click or tap anywhere on the map to move there.</p>
+  </div>
+  <figure class="plot map">
+    <canvas id="map" role="img" aria-label="Map of fit penalty over mass and splitting" tabindex="0"></canvas>
+    <figcaption>Precomputed on a 40 × 90 grid with the same code as the audit (Δχ², cross-section profiled). Black: no recoils in LZ's window (an endothermic splitting too large to pay, or an exothermic one that throws every recoil above 270 keV). The explorer above recomputes exactly at any point.</figcaption>
+  </figure>
+</section>
+
+<section class="notes" aria-labelledby="notes-title">
+  <div class="section-head">
+    <p class="eyebrow">WHAT THE AUDIT FOUND</p>
+    <h2 id="notes-title">Five things to try for yourself.</h2>
+  </div>
+  <ol class="findings">
+    <li><strong>The halo moves the answer more than the physics.</strong> Load <button type="button" class="link" data-load="fan-reece">Fan &amp; Reece</button> with their cross-section fixed, then switch between "This paper's halo" and "Common". The same particle goes from about 1.4 selected events to about 67.</li>
+    <li><strong>A factor of 4 in the higgsino cross-section.</strong> Two conventions are in print, 7.4 × 10⁻³⁹ and 1.86 × 10⁻³⁹ cm². Retuned to one event, the larger one predicts about 4.5 sideband events, the smaller about 2.1: a 1% versus 12% chance that the sideband stays empty.</li>
+    <li><strong>The sideband splits the field in two.</strong> Splittings near 360–380 keV with electroweak strength predict 1.2–5.8 sideband events per signal event; everything else predicts under 0.5. Raise the escape speed to 600 km/s on <button type="button" class="link" data-load="rodd-higgsino">the higgsino point</button> and watch that number collapse.</li>
+    <li><strong>One event barely discriminates.</strong> Across all 24 benchmarks the fit penalty runs from 1.7 to 4.9: at most a factor of about 12 in likelihood.</li>
+    <li><strong>The date counts.</strong> The event came on June 16, close to Earth's fastest point through the halo. Endothermic models expect up to 3.9 times their average rate then; exothermic ones barely change. Set the time to June 16 and December 2 to see it.</li>
+  </ol>
+  <h3>Limits</h3>
+  <p class="small-prose">Helm nuclear form factor only (its second zero sits at 279 keV, where shell-model responses differ); LZ's efficiency approximated as a piecewise-linear curve; sideband acceptance assumed complete because LZ has not published it; backgrounds neglected (about 0.01 events expected near 248 keV); contact spin-independent couplings only, so boosted dark matter and momentum-dependent interactions are not covered. Benchmarks were read from each paper by an AI reader and checked where a reproduction was possible. See the <a href="../README.md">full write-up</a>.</p>
+  <h3>Sources</h3>
+  <p class="small-prose">LZ Collaboration, arXiv:2609.02823; benchmark papers are linked from the explorer by arXiv number. Reference values in the "Audit value" box come from <a href="../results/benchmarks_common.csv">benchmarks_common.csv</a>.</p>
+</section>
+</main>
+<footer>
+  <p>Brandon Frank Han-Chween Huang · The Open Notebook · <a href="https://github.com/bomberJV/dark-matter-research">Source</a></p>
+</footer>
+<noscript><p class="noscript">The explorer computes spectra in your browser and needs JavaScript. The <a href="../README.md">written audit</a> has every number.</p></noscript>
+</body>
+</html>

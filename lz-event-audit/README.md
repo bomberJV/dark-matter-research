@@ -80,6 +80,16 @@ Full table: `results/table_benchmarks.md`. Figures: `results/benchmark-map.png`,
 - Benchmarks were read from the papers' text by an AI reader and cross-checked where a reproduction was possible. 2609.26570 could not be read in full; its exothermic sign is inferred from kinematics.
 - 24 benchmarks from 14 of about 50 papers.
 
+## Interactive explorer
+
+`web/` holds a browser version of the same engine and an explorer page: load any benchmark, change the halo, detector and normalisation, and see the spectrum, sideband expectation, fit penalty and date factor update. `web/engine.js` reproduces `rates.py` to within 0.04% on all 24 benchmarks (`node --test web/test_engine.mjs`).
+
+```
+python -m http.server 8000      # from this folder, then open http://localhost:8000/web/
+python web/build_benchmarks.py  # after rerunning audit.py
+python web/smoke_test.py http://localhost:8000/web/index.html   # headless check (needs playwright)
+```
+
 ## Reproduce
 
 ```
