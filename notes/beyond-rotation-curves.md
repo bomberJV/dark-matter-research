@@ -91,7 +91,7 @@ The minimum useful package would contain a versioned data dictionary, provenance
 
 This AI-assisted working proposal develops the next-study directions recorded in the SPARC pilot note. The validation protocol and cautions are proposed methodological elaborations. No cluster, dwarf, or globular-cluster analysis is reported as completed here. This manuscript is not peer-reviewed.
 
-Huang research notebook. [SPARC multivariable gravity pilot](https://brandon-huang-studio.brainyalbatross8.chatgpt.site/curiosities/papers/pilot-source.md). Saved source note; unpublished. Results quoted from the note, not recomputed for this writeup.
+Huang research notebook. [SPARC multivariable gravity pilot](https://brandonfhuang.com/projects/papers/pilot-source.md). Saved source note; unpublished. Results quoted from the note, not recomputed for this writeup.
 Lelli, F., McGaugh, S. S., & Schombert, J. M. (2016). [SPARC: Mass Models for 175 Disk Galaxies with Spitzer Photometry and Accurate Rotation Curves](https://ui.adsabs.harvard.edu/abs/2016AJ....152..157L/abstract). The Astronomical Journal, 152, 157. DOI: 10.3847/0004-6256/152/6/157. [Data archive](https://astroweb.cwru.edu/SPARC/).
 McGaugh, S. S., Lelli, F., & Schombert, J. M. (2016). [Radial Acceleration Relation in Rotationally Supported Galaxies](https://arxiv.org/abs/1609.05917). Physical Review Letters, 117, 201101. DOI: 10.1103/PhysRevLett.117.201101.
 Clowe, D., et al. (2006). [A Direct Empirical Proof of the Existence of Dark Matter](https://arxiv.org/abs/astro-ph/0608407). The Astrophysical Journal Letters, 648, L109–L113. DOI: 10.1086/508162.

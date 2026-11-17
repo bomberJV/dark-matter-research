@@ -82,7 +82,7 @@ The result should not be generalized to all galaxy properties, all algorithms, o
 
 ## 6. Next steps
 
-A reproducible extension should first recover the original analysis code, record all preprocessing and fold assignments, and calculate paired uncertainty intervals at the galaxy level. Stellar mass-to-light assumptions and data-selection choices should be varied explicitly. A separate, pre-specified study can then examine clusters, dwarfs, and globular clusters with observables appropriate to each system. The [companion proposal](https://brandon-huang-studio.brainyalbatross8.chatgpt.site/curiosities/papers/beyond-rotation-curves.html) develops that direction.
+A reproducible extension should first recover the original analysis code, record all preprocessing and fold assignments, and calculate paired uncertainty intervals at the galaxy level. Stellar mass-to-light assumptions and data-selection choices should be varied explicitly. A separate, pre-specified study can then examine clusters, dwarfs, and globular clusters with observables appropriate to each system. The [companion proposal](https://brandonfhuang.com/projects/papers/beyond-rotation-curves.html) develops that direction.
 
 
 
@@ -91,7 +91,7 @@ A reproducible extension should first recover the original analysis code, record
 
 This is an AI-assisted editorial expansion of the saved pilot note. All empirical counts and performance values above come from that note. The experiment has not been rerun or independently audited for this website. Methodological recommendations are proposed additions, not claims that those checks were already performed.
 
-Huang research notebook. [SPARC multivariable gravity pilot](https://brandon-huang-studio.brainyalbatross8.chatgpt.site/curiosities/papers/pilot-source.md). Saved source note; unpublished. Results quoted from the note, not recomputed for this writeup.
+Huang research notebook. [SPARC multivariable gravity pilot](https://brandonfhuang.com/projects/papers/pilot-source.md). Saved source note; unpublished. Results quoted from the note, not recomputed for this writeup.
 Lelli, F., McGaugh, S. S., & Schombert, J. M. (2016). [SPARC: Mass Models for 175 Disk Galaxies with Spitzer Photometry and Accurate Rotation Curves](https://ui.adsabs.harvard.edu/abs/2016AJ....152..157L/abstract). The Astronomical Journal, 152, 157. DOI: 10.3847/0004-6256/152/6/157. [Data archive](https://astroweb.cwru.edu/SPARC/).
 McGaugh, S. S., Lelli, F., & Schombert, J. M. (2016). [Radial Acceleration Relation in Rotationally Supported Galaxies](https://arxiv.org/abs/1609.05917). Physical Review Letters, 117, 201101. DOI: 10.1103/PhysRevLett.117.201101.
 Clowe, D., et al. (2006). [A Direct Empirical Proof of the Existence of Dark Matter](https://arxiv.org/abs/astro-ph/0608407). The Astrophysical Journal Letters, 648, L109–L113. DOI: 10.1086/508162.
