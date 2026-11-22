@@ -36,9 +36,78 @@ def expectation_grid(count, key):
         parts.append(f'<rect class="grid-empty" x="{x}" y="{y}" width="12" height="10" rx="1"/>')
         fraction = min(1, max(0, count - i))
         if fraction:
-            parts.append(f'<rect class="grid-filled" x="{x}" y="{y}" width="{12*fraction:.8f}" height="10" rx="0"/>')
+            parts.append(f'<rect class="grid-filled" style="--mark:{i}" x="{x}" y="{y}" width="{12*fraction:.8f}" height="10" rx="0"/>')
     parts.append('</svg>')
     return "\n".join(parts)
+
+
+def hypotheses(manifest):
+    """Before the reveal: explain the energy trade without disclosing sensitivity."""
+    cards = []
+    for index, shot in enumerate(manifest["scenarios"][0]["snapshots"]):
+        bid = shot["benchmark_id"]
+        b = next(b for b in manifest["benchmarks"] if b["id"] == bid)
+        upward = b["delta_keV"] > 0
+        initial, final = (100, 35) if upward else (35, 100)
+        key = f"energy-trade-{index}"
+        cards.append(f'''<article class="hypothesis" data-hypothesis="{'higgsino' if index == 0 else 'exothermic'}">
+<p class="model-kicker">{'A / Endothermic' if upward else 'B / Exothermic'}</p><h3>{NAMES[bid]}</h3>
+<svg class="energy-trade" viewBox="0 0 440 148" role="img" aria-labelledby="{key}"><title id="{key}">{'A gains' if upward else 'B releases'} internal energy. Conceptual energy levels, not to scale.</title>
+<path d="M20 {initial}H150M270 {final}H420" stroke="currentColor" stroke-width="2" opacity=".8"/><path d="M152 {initial}C205 {initial} 230 {final} 268 {final}" fill="none" stroke="currentColor" stroke-dasharray="3 6"/>
+<circle class="energy-before" cx="95" cy="{initial}" r="7" fill="currentColor"/><circle class="energy-after" cx="325" cy="{final}" r="7" fill="currentColor"/>
+<text x="20" y="{initial-15}" fill="#c1b4ae" font-size="11">Before</text><text x="360" y="{final-15}" fill="#c1b4ae" font-size="11">After</text>
+<text x="220" y="131" text-anchor="middle" fill="currentColor" font-size="12">{'+' if upward else '−'}{num(abs(b['delta_keV']))} keV internal-energy change</text></svg>
+<p>{'Kinetic energy must supply a heavier final state. The particle gains internal energy.' if upward else 'A lighter final state releases internal energy into the interaction.'}</p>
+<div class="baseline-fact"><span>At the common 544 km/s cutoff</span><strong>{num(shot['metrics']['N_roi_own_sigma'])} <small>expected selected events</small></strong></div>
+<p class="fine-print">Energy-level schematic · not to scale</p></article>''')
+    return "\n".join(cards)
+
+
+def halo(manifest):
+    low, high = [s["halo"]["vesc"] for s in manifest["scenarios"]]
+    x = lambda speed: 32 + speed / 650 * 800
+    particles = []
+    # These decorative marks illustrate a range, never a sampled halo distribution.
+    for index, speed in enumerate([45, 110, 175, 240, 305, 370, 435, 500, 560, 585]):
+        extra = ' halo-extra' if speed > low else ''
+        yy = 83 + (index % 3) * 19
+        particles.append(f'<g class="speed-streak{extra}" style="--delay:{index*.13:.2f}s"><path d="M{x(speed)-17:.2f} {yy}H{x(speed):.2f}" stroke="currentColor"/><circle cx="{x(speed):.2f}" cy="{yy}" r="2" fill="currentColor"/></g>')
+    return f'''<svg viewBox="0 0 864 213" class="halo-diagram" role="img" aria-labelledby="halo-title halo-desc"><title id="halo-title">Two discrete Galactic escape-speed cutoffs</title><desc id="halo-desc">The common cutoff is {num(low)} kilometers per second. The changed cutoff is {num(high)}. Only the interval between them is newly permitted. Particle marks are illustrative, not a sampled distribution or a rate calculation.</desc>
+<rect x="32" y="62" width="{x(low)-32:.3f}" height="86" fill="#f19a83" fill-opacity=".04"/><rect class="halo-extra" x="{x(low):.3f}" y="62" width="{x(high)-x(low):.3f}" height="86" fill="#f19a83" fill-opacity=".17"/>
+{''.join(particles)}
+<path d="M32 149H832" stroke="#76615f"/><path class="cutoff-common" d="M{x(low):.3f} 43V153" stroke="#f19a83" stroke-width="2"/><path class="halo-extra" d="M{x(high):.3f} 43V153" stroke="#f5eee5" stroke-width="2"/>
+<text x="{x(low)-7:.3f}" y="28" text-anchor="end" fill="#f19a83" font-size="13">{num(low)} km/s</text><text class="halo-extra" x="{x(high)+6:.3f}" y="28" fill="#f5eee5" font-size="13">{num(high)} km/s</text>
+{''.join(f'<path d="M{x(v):.3f} 149v5" stroke="#76615f"/><text x="{x(v):.3f}" y="174" text-anchor="middle" fill="#bba49c" font-size="11">{v}</text>' for v in range(0, 651, 100))}
+<text x="32" y="202" fill="#bba49c" font-size="11">Particle speed in the Galactic frame / km/s</text><text x="832" y="202" text-anchor="end" fill="#bba49c" font-size="10">RANGE ILLUSTRATION</text></svg>
+<p class="halo-caption"><span data-halo-caption="base">The common halo ends at {num(low)} km/s. The changed assumption admits speeds up to {num(high)} km/s. Particle marks illustrate a range, not its abundance.</span><span data-halo-caption="vesc600" hidden>The brighter interval adds speeds from {num(low)} to {num(high)} km/s. Particle marks illustrate the range, not its abundance.</span></p>'''
+
+
+def sidebands(manifest):
+    obs_energy = manifest["observation"]["energy_keV"]
+    low, high = manifest["common_assumptions"]["sideband"]["reconstructed_window_keV"]
+    x = lambda energy: 40 + energy / 650 * 800
+    result = []
+    for scenario in manifest["scenarios"]:
+        sid = scenario["id"]
+        key = f"sideband-map-{sid}"
+        result.append(f'''<div class="sideband-state" data-sideband-scenario="{sid}">
+<div class="state-heading"><h3>{esc(scenario['label'])}</h3><span class="state-badge">Same exposure and published cross-sections</span></div>
+<svg class="sideband-map" viewBox="0 0 880 150" role="img" aria-labelledby="{key}"><title id="{key}">Reported candidate energy {num(obs_energy)} keV and the {num(low)} to {num(high)} keV reconstructed-energy sideband. Uncertainties remain in the fixed observation strip.</title>
+<rect x="{x(low):.3f}" y="49" width="{x(high)-x(low):.3f}" height="49" fill="#f19a83" fill-opacity=".15"/><path d="M40 98H840" stroke="#76615f"/>
+<path data-fixed-energy="{num(obs_energy)}" d="M{x(obs_energy):.3f} 49V102" stroke="#f5eee5" stroke-width="2"/>
+<text x="{x(obs_energy):.3f}" y="28" text-anchor="middle" fill="#f5eee5" font-size="12">Candidate / {num(obs_energy)} keV</text><text x="{(x(low)+x(high))/2:.3f}" y="28" text-anchor="middle" fill="#f19a83" font-size="12">Higher-energy check / {num(low)}–{num(high)} keV</text>
+{''.join(f'<text x="{x(v):.3f}" y="121" text-anchor="middle" fill="#bba49c" font-size="10">{v}</text>' for v in range(0, 651, 100))}
+<text x="40" y="146" fill="#bba49c" font-size="10">Reconstructed recoil energy / keV</text></svg>
+<div class="sideband-pair">''')
+        for shot in scenario["snapshots"]:
+            count = shot["metrics"]["N_sb_own_sigma"]
+            if count is None or not 0 <= count <= 50:
+                raise ValueError("Sideband display requires reviewed expectations between 0 and 50")
+            bid = shot["benchmark_id"]
+            result.append(f'''<article class="sideband-model" data-sideband-benchmark="{bid}"><h3>{NAMES[bid]}</h3><p class="sideband-number"><strong>{num(count)}</strong><span>expected sideband events</span></p>
+<svg viewBox="0 0 500 38" class="sideband-bar" role="img" aria-label="{num(count)} expected sideband events on a zero to fifty event scale"><rect width="500" height="4" y="5" fill="#45373c"/><rect data-sideband-count="{count}" width="{count*10:.8f}" height="4" y="5" fill="currentColor"/><text x="0" y="33" fill="#bba49c" font-size="10">0</text><text x="500" y="33" text-anchor="end" fill="#bba49c" font-size="10">50 expected events</text></svg></article>''')
+        result.append('</div><p class="fine-print">Expected counts, not observed counts. Both bars share a linear scale. No high-energy event data are plotted here.</p></div>')
+    return "\n".join(result)
 
 
 def states(manifest):
@@ -65,7 +134,7 @@ def states(manifest):
 <div class="model-foot"><span>{change}</span><b>{'544 km/s' if sid == 'base' else '600 km/s'}</b></div></article>''')
         pieces.append('</div><p class="grid-note">One full square = one expected selected event. Partial squares show fractions. Each grid holds 100 on the same scale. These marks represent expectations, not detected particles.</p>')
         if sid == "base":
-            line = 'At the common cutoff, both predictions are of order one selected event. <strong>Select 600 km/s above</strong> to see what one changed assumption does.'
+            line = 'At the common cutoff, both predictions are of order one selected event. The higher-cutoff snapshot tests the effect of admitting faster particles.'
         else:
             first, second = scenario["snapshots"]
             factor = first["metrics"]["N_roi_own_sigma"] / base[0]["metrics"]["N_roi_own_sigma"]
@@ -119,6 +188,8 @@ def render(manifest):
         raise ValueError("Unsupported manifest")
     if [s["id"] for s in manifest["scenarios"]] != ["base", "vesc600"]:
         raise ValueError("This narrative requires the two reviewed snapshots")
+    if [s["halo"]["vesc"] for s in manifest["scenarios"]] != [544, 600]:
+        raise ValueError("The narrative controls require the reviewed 544/600 km/s settings")
     observation = manifest["observation"]
     energy, stat, systematic = [num(observation[k]) for k in ("energy_keV", "statistical_uncertainty_keV", "systematic_uncertainty_keV")]
     adapter = (WEB / "scene-view.js").read_text(encoding="utf-8").replace("export function ", "function ")
@@ -126,10 +197,13 @@ def render(manifest):
     controller = re.sub(r"^import .*?;\n", "", controller).replace("export function ", "function ")
     script = "(() => {\n'use strict';\n" + adapter + "\n" + controller + "\nmountExperience(document);\n})();"
     values = {
-        "STYLE": (WEB / "experience.css").read_text(encoding="utf-8"),
+        "STYLE": "\n".join((WEB / name).read_text(encoding="utf-8") for name in ("experience.css", "experience-journey.css")),
         "MEASUREMENT": f'<div class="measurement-line"><strong>{energy}</strong><span class="unit">keV</span></div><p class="uncertainties">± {stat} statistical &nbsp; ± {systematic} systematic</p><p class="measurement-context">Reported candidate · {num(observation["exposure_tonne_year"])} tonne-years of exposure</p>',
         "LOCK": f'<b>{energy} keV</b> &nbsp; ± {stat} stat &nbsp; ± {systematic} sys &nbsp; / &nbsp; one reported candidate',
         "STATES": states(manifest),
+        "HYPOTHESES": hypotheses(manifest),
+        "HALO": halo(manifest),
+        "SIDEBANDS": sidebands(manifest),
         "EVIDENCE": evidence(manifest),
         "MANIFEST": json.dumps(manifest, ensure_ascii=False, allow_nan=False, separators=(",", ":")).replace("<", "\\u003c"),
         "SCRIPT": script,

@@ -9,11 +9,22 @@ change in `brandon-studio`.
 ## Read the result
 
 Open `experience.html` for the guided standalone experience: an illustrative
-S1 / drift / S2 sequence, the fixed observation, two predictions on the same
-100-event grid, and the discrete 544 / 600 km/s assumption change. It includes
+S1 / drift / S2 sequence with pause and replay, a prediction-before-reveal choice,
+the fixed observation, two predictions on the same 100-event grid, and the discrete
+544 / 600 km/s assumption change. A speed-range schematic makes the changed input
+visible; the next stage compares absolute high-energy sideband expectations.
+Choices only affect the narrative and never change the calculated outputs.
+Visitors may skip the prediction, inspect all evidence at any time, and reset.
+Reduced motion skips timed signal playback; hidden tabs pause it. It includes
 all scripts, styles, SVG charts and the complete manifest in one offline-capable
 file. Both scenarios remain readable without JavaScript. The illustration is
 not measured geometry; expected-event marks are not observed events.
+
+The energy-level diagrams are conceptual and not to scale. Speed-range particle
+marks are illustrative, not a sampled halo or abundance plot. Sideband bars share
+a linear 0–50 expected-event scale; no observed high-energy counts are plotted.
+Unit sideband acceptance remains an explicit approximation. The visitor predicts
+sensitivity to a changed assumption, not which physical theory is true.
 
 Open `index.html` through a local HTTP server. Both scenarios and their source
 details remain readable without JavaScript. With JavaScript, the buttons select
