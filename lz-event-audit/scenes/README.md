@@ -86,4 +86,3 @@ silently retuned to force one expected event.
 This does not certify a full cinematic integration, live continuous parameter
 exploration or every paper in the catalog. Any later detector picture must be
 labeled an illustration; an authored event point is not measured event geometry.
-
