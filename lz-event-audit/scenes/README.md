@@ -8,6 +8,13 @@ change in `brandon-studio`.
 
 ## Read the result
 
+Open `experience.html` for the guided standalone experience: an illustrative
+S1 / drift / S2 sequence, the fixed observation, two predictions on the same
+100-event grid, and the discrete 544 / 600 km/s assumption change. It includes
+all scripts, styles, SVG charts and the complete manifest in one offline-capable
+file. Both scenarios remain readable without JavaScript. The illustration is
+not measured geometry; expected-event marks are not observed events.
+
 Open `index.html` through a local HTTP server. Both scenarios and their source
 details remain readable without JavaScript. With JavaScript, the buttons select
 one of the two recorded scenarios. They do not interpolate or recompute science.
@@ -51,10 +58,12 @@ From the repository root, with the dependencies in `requirements.txt` installed:
 ```sh
 python lz-event-audit/scene_export.py
 python lz-event-audit/render_scenes.py
+python lz-event-audit/build_experience.py
 python -m unittest discover -s lz-event-audit -p test_scene_export.py
-node --test lz-event-audit/web/test_engine.mjs lz-event-audit/web/test_scene_view.mjs
+node --test lz-event-audit/web/test_engine.mjs lz-event-audit/web/test_scene_view.mjs lz-event-audit/web/test_experience.mjs
 python lz-event-audit/scene_export.py --check
 python lz-event-audit/render_scenes.py --check
+python lz-event-audit/build_experience.py --check
 python -m http.server 8000 --directory lz-event-audit
 ```
 
