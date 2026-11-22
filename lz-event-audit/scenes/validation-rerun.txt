@@ -1,0 +1,52 @@
+
+[9] Benchmarks under each paper's own halo (does the paper's claim reproduce?)
+    Fan & Reece 1.1 TeV/350 keV, rho 0.4, v0 220, vesc 540, vE 232 (not stated): N(215-270) 1.04 (claim 1)
+    Su, Yang & Yang 1.105 TeV/350 keV, sigma 1e-37, v0 220, vE 220: N(160-200) 0.001 (claim ~0), N(225-271) 3.44 (claim ~1)
+    seesaw B0045, vlab 254: N_ROI 0.981 (pub N_WS 1.039)
+    seesaw C0893, vlab 254: N_ROI 2.564 (pub N_WS 2.682)
+    seesaw B0461, vlab 254: N_ROI 1.072 (pub N_WS 1.13)
+    seesaw B0581, vlab 254: N_ROI 0.557 (pub N_WS 0.591)
+    LZ two-sided 90% interval edge sigma_V 1.09e-40 (1 TeV, 350 keV): N_ROI 0.83  (a Poisson interval for one event spans roughly 0.1-4.4)
+    LZ two-sided 90% interval edge sigma_V 1.92e-39 (1 TeV, 350 keV): N_ROI 14.69  (a Poisson interval for one event spans roughly 0.1-4.4)
+
+[5] Elastic reach: heaviest-speed recoil at 248 keV needs m >~ 74 GeV (Kannike et al. 2609.07742)
+    ours (Xe mean mass, vmax 798): m_min = 74.4 GeV
+
+[3] 2609.13038: v_min at 248 keV on Xe-131 for its benchmarks (pub 786-797 km/s)
+    m   744.04 delta 361.327: v_min  792.3 km/s
+    m   997.57 delta 370.000: v_min  790.3 km/s
+    m  1479.37 delta 380.000: v_min  790.5 km/s
+    halo cutoff vesc + vE = 798 km/s (pub 798)
+
+[2] Baer & Barger (2609.06153), Table I: exothermic, charge-coupled, LZ halo
+    m   300 d  -300: sigma_p 1.45e-45 (pub 1.5e-45)  peak   156 (pub 155)  N<70/N>70 0.105 (pub 0.106)
+    m   500 d  -275: sigma_p 2.22e-45 (pub 2.2e-45)  peak   154 (pub 155)  N<70/N>70 0.186 (pub 0.188)
+    m   500 d  -350: sigma_p 3.81e-45 (pub 3.8e-45)  peak   163 (pub 163)  N<70/N>70 0.010 (pub 0.011)
+    m   800 d  -350: sigma_p 6.70e-45 (pub 6.7e-45)  peak   164 (pub 164)  N<70/N>70 0.008 (pub 0.009)
+    m  1000 d  -400: sigma_p 1.30e-44 (pub 1.3e-44)  peak   172 (pub 172)  N<70/N>70 0.000 (pub 0.000)
+
+[4] Mahapatra & Paul (2609.14799): 1 TeV, delta 300 keV, contact SI; share of events below 150 keV (pub 17.44%)
+    ours: 17.15% (reconstructed E), 12.17% (true E)
+
+[1] Rodd, Safdi, Slatyer & Xu (2609.04175), Table I, Helm form factor
+    1.1 TeV higgsino, sigma_n = 7.3e-39 cm^2; delta_1 gives one ROI event; sideband 350-590 keV
+    halo: fixed vE = 254
+      vesc 544: delta_1  372.3 (pub 377)   N_>270  10.5 (pub 8.3)   N_SB   6.0 (pub 4.9)
+      vesc 567: delta_1  389.0 (pub 393)   N_>270  13.0 (pub 10.3)   N_SB   7.9 (pub 6.6)
+      vesc 610: delta_1  419.6 (pub 423)   N_>270  15.0 (pub 12.7)   N_SB   9.8 (pub 8.8)
+    halo: year-averaged vE = 250.2 +/- 14.9
+      vesc 544: delta_1  375.3 (pub 377)   N_>270   7.7 (pub 8.3)   N_SB   4.5 (pub 4.9)
+      vesc 567: delta_1  391.6 (pub 393)   N_>270   9.7 (pub 10.3)   N_SB   6.0 (pub 6.6)
+      vesc 610: delta_1  421.2 (pub 423)   N_>270  12.1 (pub 12.7)   N_SB   8.0 (pub 8.8)
+
+[6] Delepine & Khalil (2609.26698), Table I: 1 TeV, true-energy windows, no efficiency, vE = 232 fixed
+    delta 325.0: N(14-225)/N_sig  5.20 (pub 4.04)   N(271-800)/N_sig  2.15 (pub 1.34)
+    delta 339.2: N(14-225)/N_sig  2.22 (pub 1.77)   N(271-800)/N_sig  2.94 (pub 1.77)
+    delta 355.0: N(14-225)/N_sig  0.52 (pub 0.4)   N(271-800)/N_sig 11.89 (pub 6.18)
+
+[7] Di Mauro (2609.02608): 1 TeV pseudo-Dirac, delta 297.05 keV, sigma_N 6.5e-43 isoscalar, year-averaged halo
+    N_ROI 0.94 (pub ~0.99)   N(55-200) 0.73 (pub 0.73)   f(>200) 0.226 (pub 0.262)
+
+[8] Dent & Newstead (2609.04673): sideband events per search-window event; sigma_E = 23 keV, v_lab 250, sideband 350-680 keV
+    m   1000 delta    350: N_SB/N_ROI   0.65 (pub 0.6)
+    m     42 delta  -1000: N_SB/N_ROI   0.04 (pub 19.0)
