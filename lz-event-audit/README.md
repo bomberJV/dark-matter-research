@@ -1,5 +1,10 @@
 # One event, many explanations: an audit of the LZ 248 keV interpretations
 
+**Expanded investigation:** [two recorded scene configurations and their assumptions](scenes/README.md)
+provide a reproducible, discrete comparison of `rodd-higgsino` and
+`baer-barger-300` under one escape-speed change. This is a research export and
+review preview; homepage film integration remains separate.
+
 Working note · 15 November 2026 · AI-assisted · not peer-reviewed
 
 LZ reported one nuclear-recoil candidate at 248 ± 23 (stat) ± 23 (sys) keV in 2.84 tonne-years, 3.4σ local and 2.6σ global (arXiv:2609.02823). About fifty interpretation papers followed in ten weeks. Each picks its own halo, cross-section convention, efficiency, resolution and energy windows, so their benchmark points cannot be compared directly. Single-model sideband checks exist (Rodd et al. 2609.04175; Dent & Newstead 2609.04673; Delepine & Khalil 2609.26698; Langhoff 2609.09385). We found no study that puts the published benchmarks of different papers side by side under one set of assumptions. This note does that for 24 benchmarks from 14 papers.

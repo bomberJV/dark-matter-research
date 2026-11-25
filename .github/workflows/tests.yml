@@ -18,7 +18,7 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: 22
-      - run: node --test lz-event-audit/web/test_engine.mjs
+      - run: node --test lz-event-audit/web/test_engine.mjs lz-event-audit/web/test_scene_view.mjs lz-event-audit/web/test_experience.mjs
 
   validate:
     name: Rate engine against published numbers
@@ -36,3 +36,19 @@ jobs:
         run: |
           python validate.py > "$RUNNER_TEMP/validation.txt"
           diff -u --strip-trailing-cr -Z results/validation.txt "$RUNNER_TEMP/validation.txt"
+
+  scenes:
+    name: Reproduce LZ scene snapshots
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+      - run: pip install -r requirements.txt
+      - run: python -m unittest discover -s lz-event-audit -p test_scene_export.py
+      - run: python lz-event-audit/scene_export.py --check
+      - run: python lz-event-audit/render_scenes.py --check
+      - run: python lz-event-audit/build_experience.py --check
