@@ -1,10 +1,28 @@
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
 import { readFileSync } from 'node:fs';
-import { createExperience, createSignalPlayback, mountExperience } from './experience.js';
+import { createExperience, createSignalPlayback, emptyRegionCounts, mountExperience } from './experience.js';
 
 const manifest = JSON.parse(readFileSync(new URL('../scenes/manifest.json', import.meta.url), 'utf8'));
 const html = readFileSync(new URL('../scenes/experience.html', import.meta.url), 'utf8');
+
+test('empty-region expectations respect normalization, acceptance, and the static reference', () => {
+  for (const scenario of manifest.scenarios) {
+    for (const shot of scenario.snapshots) {
+      const m = shot.metrics;
+      const baseline = emptyRegionCounts(m, true, 1);
+      assert.equal(baseline.mean, m.N_sb_own_sigma / m.N_roi_own_sigma);
+      assert.equal(emptyRegionCounts(m, false, 0.5).mean, m.N_sb_own_sigma / 2);
+      assert.deepEqual(emptyRegionCounts(m, false, 0), { mean: 0, frequency: 1000 });
+      if (scenario.id === 'base') {
+        const frequency = shot.benchmark_id === 'rodd-higgsino' ? 3 : 966;
+        assert.equal(baseline.frequency, frequency);
+        assert.ok(html.includes('<strong class="empty-count">' + frequency + '</strong>'));
+      }
+    }
+  }
+  assert.ok(html.includes('Dent &amp; Newstead'));
+});
 
 test('guided scenario changes never change the observation, parameters or stored results', () => {
   const model = createExperience(manifest);

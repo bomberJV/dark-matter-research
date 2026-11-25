@@ -77,6 +77,34 @@ export function createSignalPlayback({ onFrame, onComplete, onPlayingChange = ()
   });
 }
 
+export function emptyRegionCounts(metrics, normalized, acceptance) {
+  const mean = metrics.N_sb_own_sigma * acceptance / (normalized ? metrics.N_roi_own_sigma : 1);
+  return { mean, frequency: Math.round(1000 * Math.exp(-mean)) };
+}
+
+function mountEmptyRegion(doc, manifest) {
+  const form = doc.getElementById('zero-settings');
+  if (!form?.elements) return;
+  const controls = form.elements;
+  const rows = Array.from(doc.querySelectorAll('[data-empty-model]'));
+  function render() {
+    const scenario = manifest.scenarios.find((item) => item.id === controls.scenario.value);
+    const acceptance = Number(controls.acceptance.value) / 100;
+    doc.getElementById('acceptance-value').textContent = controls.acceptance.value + '%';
+    for (const row of rows) {
+      const snapshot = scenario.snapshots.find((item) => item.benchmark_id === row.dataset.emptyModel);
+      const result = emptyRegionCounts(snapshot.metrics, controls.strength.value === 'normalized', acceptance);
+      row.querySelector('.empty-count').textContent = result.frequency;
+      row.querySelector('meter').value = result.frequency;
+      row.querySelector('.empty-mean').textContent = Number(result.mean.toPrecision(4)) + ' higher-energy events expected per run.';
+    }
+  }
+  form.addEventListener('input', render);
+  form.addEventListener('submit', (event) => event.preventDefault());
+  form.hidden = false;
+  render();
+}
+
 export function mountExperience(doc) {
   const embedded = doc.getElementById('scene-manifest');
   if (!embedded) return null;
@@ -250,6 +278,7 @@ export function mountExperience(doc) {
   media?.addEventListener?.('change', () => { motionPaused = reduced(); if (motionPaused) playback.pause(); updateMotion(); });
   doc.addEventListener('visibilitychange', () => { if (doc.visibilityState === 'hidden' && playback.playing) playback.pause(); });
 
+  mountEmptyRegion(doc, experience.record());
   const download = el('download-manifest');
   download.hidden = false;
   download.addEventListener('click', () => {

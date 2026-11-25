@@ -20,8 +20,8 @@
     <div class="hero-copy">
       <p class="eyebrow"><span class="status-dot"></span> The LZ investigation</p>
       <h1 id="title">One event.<br>Two <em>explanations.</em></h1>
-      <p class="lede">A flash of light. A second signal. An unusual recoil. Follow the evidence, make a prediction, then change one assumption about the invisible particles around us.</p>
-      <div class="signal-playback" hidden><button type="button" class="primary-link" id="play-signal">Follow the signal <span aria-hidden="true">▶</span></button><button type="button" class="quiet-button" id="skip-signal">Skip to the observation ↓</button></div>
+      <p class="lede">LUX-ZEPLIN watches liquid xenon for the light and charge released when a nucleus recoils. In June 2023, it recorded one unusual candidate. Its energy could be measured. What struck the nucleus is still unknown.</p>
+      <div class="signal-playback" hidden><button type="button" class="primary-link" id="play-signal">See how LZ measured it <span aria-hidden="true">▶</span></button><button type="button" class="quiet-button" id="skip-signal">Skip to the observation ↓</button></div>
       <div class="measurement" id="reported-measurement">__MEASUREMENT__</div>
       <a class="primary-link" id="start-investigation" href="#predictions">Make your prediction <span aria-hidden="true">↓</span></a>
       <p class="hero-note">An independent calculation. A candidate, not a discovery.</p>
@@ -93,7 +93,7 @@
   <section class="investigation wrap" id="predictions" aria-labelledby="predictions-title">
     <div class="section-heading"><p class="eyebrow">02 / The competing predictions</p><p class="micro">Same exposure. Published cross-sections held fixed.</p></div>
     <h2 id="predictions-title" tabindex="-1">Make a <em>prediction.</em></h2>
-    <p class="section-intro">Under the common assumptions, both benchmarks predict roughly one selected event. They trade energy differently. Decide which prediction will change more when the halo is allowed to include faster particles.</p>
+    <p class="section-intro">I calculated how many events two proposed dark matter particles would produce in the same detector exposure. Both give roughly one. One particle must spend energy to become heavier in the collision. The other releases energy as it becomes lighter. Which count would rise more if faster particles could reach the detector?</p>
     <div class="hypothesis-pair">__HYPOTHESES__</div>
     <div class="prediction-console" hidden>
       <p class="prediction-prompt" id="prediction-prompt">Which expected event count will change more?</p>
@@ -107,7 +107,7 @@
     <p class="prediction-ticket" id="prediction-ticket" hidden></p>
 
     <div class="assumption-desk" id="assumption">
-      <div><p class="eyebrow">Exactly one changed input</p><h3>Move the speed cutoff.</h3><p>The halo is the assumed population of dark matter around the Galaxy. Its escape-speed parameter cuts off the distribution in the Galactic frame.</p></div>
+      <div><p class="eyebrow">Exactly one changed input</p><h3>Move the speed cutoff.</h3><p>Choose the maximum speed allowed for dark matter in the galaxy’s rest frame. Each calculation uses the same amount of xenon, observation time and published interaction strengths.</p></div>
       <div class="scenario-control" role="group" aria-label="Choose a validated escape-speed snapshot" hidden>
         <button type="button" data-scenario-choice="base" aria-pressed="true"><small>Common assumption</small><strong>544 <span>km/s</span></strong></button>
         <button type="button" data-scenario-choice="vesc600" aria-pressed="false"><small>Raise the cutoff →</small><strong>600 <span>km/s</span></strong></button>
@@ -128,17 +128,35 @@
     <p class="eyebrow">04 / Look beyond the candidate</p><h2 id="check-title" tabindex="-1">An explanation<br>predicts <em>more.</em></h2>
     <p class="section-intro">A model that can produce this recoil also makes predictions elsewhere. The higher-energy region gives us another place to check.</p>
     __SIDEBANDS__
+    <section class="zero-study" aria-labelledby="zero-title" id="empty-region">
+      <h3 id="zero-title">The weight of <em>zero.</em></h3>
+      <p>LZ reported zero science events in its higher-energy control region. It defined that region using the two light signals. The audit approximates it as 350–590 keV. If a model can produce the candidate, how often would this region still be empty?</p>
+      <p><a href="https://arxiv.org/abs/2609.02823v1">LZ observation and supplementary Table S6 ↗</a></p>
+      <form id="zero-settings" hidden>
+        <label>Assumed escape speed<select name="scenario"><option value="base">544 km/s</option><option value="vesc600">600 km/s</option></select></label>
+        <label>Interaction strength<select name="strength"><option value="normalized">Scale to one expected search event</option><option value="published">Use the published strength</option></select></label>
+        <label>Higher-energy acceptance <output id="acceptance-value">100%</output><input type="range" name="acceptance" value="100" min="0" max="100" step="1"></label>
+      </form>
+      <div id="zero-results" class="zero-results" aria-live="polite">__ZEROS__</div>
+      <p class="fine-print">The figures give the expected number of empty regions per 1,000 hypothetical repeats, rounded to the nearest whole repeat. Each strip shows that fraction. The reference uses 544 km/s, one expected search event for each model, full acceptance and zero background. Acceptance is the fraction of higher-energy events the detector would retain. Its value in this region is unpublished.</p>
+      <details><summary>How the calculation works</summary><p>With the published strengths, the audit gives the search and higher-energy counts shown above. Scaling a model to one search event divides both counts by its expected search count. Multiplying the higher-energy count by acceptance gives an expected mean λ. Under Poisson counting the chance of zero is exp(−λ). This is a probability conditional on the model and settings. The probability that a model explains the candidate is a different question.</p></details>
+    </section>
     <p class="acceptance-note"><strong>This check has a limit.</strong> The sideband acceptance is unpublished and assumed to be one. These are predictions to compare with measured high-energy events and the detector response. This export alone cannot declare a winner.</p>
     <div class="conclusion" id="conclusion"><p class="eyebrow">What this investigation demonstrates</p><h2>Same evidence.<br>Different <em>expectations.</em></h2>
-    <div class="conclusion-body"><p>In this calculation, the endothermic higgsino benchmark depends strongly on the fast tail of the assumed halo. Raising the cutoff makes more of that tail available. The exothermic benchmark releases internal energy and changes little here.</p><p>The observation has not moved. The experiment has not recorded more events. The result exposes sensitivity to an assumption; it does not establish either explanation.</p></div>
+    <div class="conclusion-body"><p>A higgsino needs kinetic energy to enter a heavier state. At 544 km/s very few particles can pay that cost. Raising the cutoff by about 10% allows many more collisions to clear the threshold. The other model releases energy, so slower particles already contribute.</p><p>The observation has not moved. The experiment has not recorded more events. The result exposes sensitivity to an assumption; it does not establish either explanation.</p></div>
     <div class="end-actions"><a class="text-link" href="#evidence">Inspect every assumption <span aria-hidden="true">↓</span></a><button type="button" id="reset-investigation" class="quiet-button" hidden>Reset the investigation ↺</button></div></div>
   </section>
 
+  <section class="audit-case"><div class="wrap"><p class="eyebrow">An independent reproduction / Dent &amp; Newstead</p><div class="casehead"><h2>Where the numbers <em>diverge.</em></h2><p>A model that can produce this recoil should also predict how often larger recoils occur. Dent and Newstead reported that ratio for two other particle models. I ran the comparison independently. Each number below is the predicted number of higher-energy events for every event in the search window.</p></div>
+<div class="table-scroll"><table class="comparison"><caption>Expected higher-energy events per search-window event, in two cases from the same paper</caption><thead><tr><th scope="col">Particle model</th><th scope="col">Paper prediction</th><th scope="col">My calculation</th></tr></thead><tbody><tr><th scope="row">1,000 GeV · gains energy internally</th><td>0.6</td><td>0.65</td></tr><tr class="miss"><th scope="row">42 GeV · releases energy</th><td>19</td><td class="warm">0.04</td></tr></tbody></table></div>
+<div class="finding"><h3>One missing input</h3><p>The first pair is close. In the second, the paper expects 19 higher-energy events for every one in the search window. My calculation expects one higher-energy event for roughly every 25 in the search window. How much energy the particle releases affects which window a recoil lands in. I used a mass difference of −1,000 keV. The paper leaves that value unspecified at its best fit, so the reason for the discrepancy is still open.</p></div>
+<details><summary>Inspect the two runs</summary><p>The same routine used a constant 23 keV energy resolution, a laboratory speed of 250 km/s and a higher-energy band of 350–680 keV. The 1,000 GeV case used a +350 keV splitting. The 42 GeV case used −1,000 keV. Both columns are model predictions.</p><p><a href="https://arxiv.org/abs/2609.04673">Dent &amp; Newstead paper</a> · <a href="https://github.com/bomberJV/dark-matter-research/blob/research/lz-scene-snapshots/lz-event-audit/validate.py">Validation routine</a> · <a href="https://github.com/bomberJV/dark-matter-research/blob/research/lz-scene-snapshots/lz-event-audit/results/validation.txt">Recorded output, check 8</a></p></details></div></section>
   <section class="evidence wrap" id="evidence" aria-labelledby="evidence-title">
     <div class="section-heading"><p class="eyebrow">Keep the work inspectable</p><span class="micro">Independent calculation · qualified results</span></div>
     <h2 id="evidence-title">Behind <em>the image.</em></h2>
     <p class="section-intro">The experience uses recorded outputs from the research audit. Numerical reproduction does not make a physical explanation correct.</p>
     __EVIDENCE__
+    <p><a class="text-link" href="https://brandonfhuang.com/projects/papers/lz-event-audit/">Open the full benchmark explorer ↗</a></p>
     <div class="evidence-actions"><button class="primary-link" id="download-manifest" type="button" hidden>Download calculation record <span aria-hidden="true">↓</span></button><a class="text-link" href="https://github.com/bomberJV/dark-matter-research/pull/2">Review the research PR <span aria-hidden="true">↗</span></a></div>
     <p class="fine-print">Detector art and charts are original illustrations. No paper figures or measured event geometry are reproduced.</p>
   </section>

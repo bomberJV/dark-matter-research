@@ -8,6 +8,7 @@ from __future__ import annotations
 import argparse
 import html
 import json
+import math
 import re
 from pathlib import Path
 
@@ -132,7 +133,7 @@ def states(manifest):
 <p class="count-caption">{num(manifest['observation']['exposure_tonne_year'])} tonne-years · unchanged cross-section</p>
 {expectation_grid(count, f'{sid}-{bid}')}
 <div class="model-foot"><span>{change}</span><b>{'544 km/s' if sid == 'base' else '600 km/s'}</b></div></article>''')
-        pieces.append('</div><p class="grid-note">One full square = one expected selected event. Partial squares show fractions. Each grid holds 100 on the same scale. These marks represent expectations, not detected particles.</p>')
+        pieces.append('</div><p class="grid-note">One full square = one expected selected event. A count of 0.65 means about 65 events across 100 equivalent runs. Each grid holds 100 on the same scale. These marks represent expectations, not detected particles.</p>')
         if sid == "base":
             line = 'At the common cutoff, both predictions are of order one selected event. The higher-cutoff snapshot tests the effect of admitting faster particles.'
         else:
@@ -183,6 +184,21 @@ python lz-event-audit/build_experience.py --check</pre>
 </div></details>'''
 
 
+def empty_region_reference(manifest):
+    """Initial, usable without scripts: one expected search event at 544 km/s."""
+    rows = []
+    for shot in manifest["scenarios"][0]["snapshots"]:
+        metrics = shot["metrics"]
+        mean = metrics["N_sb_own_sigma"] / metrics["N_roi_own_sigma"]
+        frequency = round(1000 * math.exp(-mean))
+        rows.append(f'''<article data-empty-model="{esc(shot['benchmark_id'])}">
+<h4>{esc(NAMES[shot['benchmark_id']])}</h4>
+<p><strong class="empty-count">{frequency}</strong> in 1,000 repeats</p>
+<meter min="0" max="1000" value="{frequency}" aria-label="Empty repeats out of one thousand"></meter>
+<p class="empty-mean">{num(mean)} higher-energy events expected per run.</p></article>''')
+    return "".join(rows)
+
+
 def render(manifest):
     if manifest.get("schema_version") != "lz-scenes/v1":
         raise ValueError("Unsupported manifest")
@@ -204,6 +220,7 @@ def render(manifest):
         "HYPOTHESES": hypotheses(manifest),
         "HALO": halo(manifest),
         "SIDEBANDS": sidebands(manifest),
+        "ZEROS": empty_region_reference(manifest),
         "EVIDENCE": evidence(manifest),
         "MANIFEST": json.dumps(manifest, ensure_ascii=False, allow_nan=False, separators=(",", ":")).replace("<", "\\u003c"),
         "SCRIPT": script,

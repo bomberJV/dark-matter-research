@@ -8,6 +8,17 @@ change in `brandon-studio`.
 
 ## Read the result
 
+The standalone LZ investigation has one editable source in this repository.
+Both preview titles, *Before the Discovery* and *LZ Investigation*, refer to
+`scenes/experience.html`. Edit the template and controller under `web/`,
+then regenerate the page with `python lz-event-audit/build_experience.py`.
+
+The higher-energy chapter calculates how often zero events would occur
+under either benchmark. It exposes the two halo settings, normalization
+and assumed acceptance. A separate Dent and Newstead comparison uses
+the validation routine's 350–680 keV window and records the unresolved
+mass splitting for the 42 GeV example.
+
 Open `experience.html` for the guided standalone experience: an illustrative
 S1 / drift / S2 sequence with pause and replay, a prediction-before-reveal choice,
 the fixed observation, two predictions on the same 100-event grid, and the discrete
